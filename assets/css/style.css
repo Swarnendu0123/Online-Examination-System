@@ -1,0 +1,153 @@
+* {
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: aliceblue;
+}
+
+.ques-type span {
+  color: rgb(115, 0, 255);
+}
+
+.exam-title {
+  padding: 30px 0 0 0;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  font-size: 40px;
+  text-align: center;
+}
+
+.nav {
+  padding: 20px;
+  background-color: white;
+  position: sticky;
+  top: 45px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.topics p {
+  padding: 10px;
+  margin: 0 10px;
+}
+
+.topics {
+  display: flex;
+  justify-content: space-around;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(115, 0, 255);
+  padding: 10px 20px;
+  border: none;
+}
+.question {
+  border-radius: 10px;
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  width: 500px;
+  text-align: justify;
+}
+
+.options {
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  width: 400px;
+  border-radius: 10px;
+}
+
+.question-details{
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ques-type .red{
+    color: red;
+}
+
+.ques-type .green{
+    color: green;
+}
+
+.option {
+  padding: 10px 0px;
+}
+
+.exam-status .instruction {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 40px;
+  display: flex;
+}
+.exam-status .instruction div {
+  display: flex;
+}
+.exam-status .instruction div div {
+  margin: 10px;
+  color: white;
+  padding: 5px 12px;
+  height: 25px;
+  border-radius: 5px;
+}
+
+.exam-status .instruction div label {
+  padding: 10px 0px;
+}
+
+.exam-status .quest {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.exam-status .quest div {
+  margin: 10px;
+  color: white;
+  padding: 5px 12px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.195);
+}
+
+.completed {
+  background-color: rgb(53, 192, 3) !important;
+}
+.visited {
+  background-color: rgba(255, 191, 0) !important;
+}
+.notvisited {
+  background-color: rgba(0, 0, 0, 0.195) !important;
+}
+
+.ques-type {
+  padding: 20px 0px 10px 100px;
+}
+
+label {
+  margin: 2px 10px;
+}
+
+.active {
+  color: white;
+  background-color: rgb(115, 0, 255);
+  border-radius: 10px;
+}

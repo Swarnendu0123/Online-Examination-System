@@ -1,6 +1,7 @@
 {
   "name": "Online Examination System",
   "version": "1.0.0",
+  "type": "module",
   "dependencies": {
   }
 }
