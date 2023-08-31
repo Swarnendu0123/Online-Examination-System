@@ -70,18 +70,18 @@ body {
   border-radius: 10px;
 }
 
-.question-details{
-    width: 1000px;
-    display: flex;
-    justify-content: space-between;
+.question-details {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.ques-type .red{
-    color: red;
+.ques-type .red {
+  color: red;
 }
 
-.ques-type .green{
-    color: green;
+.ques-type .green {
+  color: green;
 }
 
 .option {
@@ -128,6 +128,10 @@ body {
   background-color: rgba(0, 0, 0, 0.195);
 }
 
+.violet {
+  color: rgb(115, 0, 255);
+}
+
 .completed {
   background-color: rgb(53, 192, 3) !important;
 }
@@ -150,4 +154,11 @@ label {
   color: white;
   background-color: rgb(115, 0, 255);
   border-radius: 10px;
+}
+
+.footer {
+  margin: 0 30px;
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
 }
