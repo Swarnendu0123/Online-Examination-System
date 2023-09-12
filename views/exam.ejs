@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= exam_name + " - " + question_id%></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-size: 20px;
+        padding: 0;
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+      }
+
+      body {
+        background-color: aliceblue;
+      }
+
+      .ques-type span {
+        color: rgb(115, 0, 255);
+      }
+
+      .exam-title {
+        padding: 30px 0 0 0;
+        background-color: white;
+        position: sticky;
+        top: 0;
+        font-size: 40px;
+        text-align: center;
+      }
+
+      .nav {
+        padding: 20px;
+        background-color: white;
+        position: sticky;
+        top: 45px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      .topics p {
+        padding: 10px;
+        margin: 0 10px;
+      }
+
+      .topics {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .main {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        border-radius: 10px;
+        color: white;
+        background-color: rgb(115, 0, 255);
+        padding: 10px 20px;
+        border: none;
+      }
+      .question {
+        border-radius: 10px;
+        background-color: white;
+        padding: 20px;
+        margin: 20px;
+        width: 500px;
+        text-align: justify;
+      }
+
+      .options {
+        background-color: white;
+        padding: 20px;
+        margin: 20px;
+        width: 400px;
+        border-radius: 10px;
+      }
+
+      .question-details {
+        width: 70%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .ques-type .red {
+        color: red;
+      }
+
+      .ques-type .green {
+        color: green;
+      }
+
+      .option {
+        padding: 10px 0px;
+      }
+
+      .exam-status .instruction {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 40px;
+        display: flex;
+      }
+      .exam-status .instruction div {
+        display: flex;
+      }
+      .exam-status .instruction div div {
+        margin: 10px;
+        color: white;
+        padding: 5px 12px;
+        height: 25px;
+        border-radius: 5px;
+      }
+
+      .exam-status .instruction div label {
+        padding: 10px 0px;
+      }
+
+      .exam-status .quest {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: white;
+        padding: 20px;
+        margin: 20px;
+        width: 300px;
+        border-radius: 10px;
+      }
+
+      .exam-status .quest div {
+        margin: 10px;
+        color: white;
+        padding: 5px 12px;
+        height: 25px;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.195);
+      }
+
+      .violet {
+        color: rgb(115, 0, 255);
+      }
+
+      .completed {
+        background-color: rgb(53, 192, 3) !important;
+      }
+      .visited {
+        background-color: rgba(255, 191, 0) !important;
+      }
+      .notvisited {
+        background-color: rgba(0, 0, 0, 0.195) !important;
+      }
+
+      .ques-type {
+        padding: 20px 0px 10px 50px;
+      }
+
+      label {
+        margin: 2px 10px;
+      }
+
+      .active {
+        color: white;
+        background-color: rgb(115, 0, 255);
+        border-radius: 10px;
+      }
+
+      .footer {
+        margin: 0 30px;
+        width: 65%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      @media screen {
+        .nav {
+          top: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p class="exam-title"><%=exam_name%></p>
+    <header class="nav">
+      <div class="topics">
+        <% if(sub == "phy"){ %>
+        <p class="active">Physics</p>
+        <% }else{ %>
+        <p>Physics</p>
+        <%}%> <% if(sub == "chem"){ %>
+        <p class="active">Chemistry</p>
+        <% }else{ %>
+        <p>Chemistry</p>
+        <%}%> <% if(sub == "math"){ %>
+        <p class="active">Math</p>
+        <% }else{ %>
+        <p>Math</p>
+        <%}%>
+      </div>
+      <p>Time Left: <span class="violet"> 2 hrs 14 mins </span></p>
+      <button class="btn">Submit</button>
+    </header>
+    <div class="question-details">
+      <div class="ques-type">Question Type: <span> <%= type%> </span></div>
+      <div class="ques-type">
+        Marks: <span class="green"><%=pos_marks%></span> ,<span class="red">
+          <%= neg_marks %></span
+        >
+      </div>
+    </div>
+    <div class="main">
+      <div class="question"><%= question %></div>
+      <div class="options">
+        <div class="option">
+          <input type="checkbox" id="ans1" name="ans1" />
+          <label for="ans1"> <%= ans1 %></label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="ans2" name="ans2" />
+          <label for="ans2"><%= ans2 %></label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="ans3" name="ans3" />
+          <label for="ans3"><%= ans3 %></label>
+        </div>
+        <div class="option">
+          <input type="checkbox" id="ans4" name="ans4" />
+          <label for="ans4"><%= ans4 %></label>
+        </div>
+      </div>
+      <div class="exam-status">
+        <div class="instruction">
+          <div>
+            <div class="completed" id="completed">1</div>
+            <label for="completed">Completed</label>
+          </div>
+          <div>
+            <div class="visited" id="visited">1</div>
+            <label for="visited">Visited</label>
+          </div>
+          <div>
+            <div class="notvisited" id="notvisited">1</div>
+            <label for="notvisited">Not visited</label>
+          </div>
+        </div>
+        <div class="quest">
+          <div class="visited">1</div>
+          <div>2</div>
+          <div class="completed">3</div>
+          <div>4</div>
+          <div>5</div>
+          <div class="completed">1</div>
+          <div class="completed">6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <button class="btn">Previous</button>
+      <button class="btn">Next</button>
+    </div>
+  </body>
+</html>
